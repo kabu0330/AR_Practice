@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <conio.h>
 
 // 전역변수
 const int LINECOUNT = 50;
@@ -11,6 +12,8 @@ char PlayerName[NAMELEN] = "NONE";
 int MonsterAtt = 10;
 int MonsterHp = 100;
 char MonsterName[NAMELEN] = "NONE";
+
+char Input = ' ';
 
 
 // 배열과 배열 간 대입 불가
@@ -86,28 +89,87 @@ void MonsterStatusRender()
     StatusRender(MonsterName, MonsterAtt, MonsterHp);
 }
 
+
+
+// 클래스의 필요성
+// 함수는 다양한 상황에서 쓸수있게 만들수록 좋다.
+// 함수는 작은 기능을 많이 만들고 
+// 함수는 한번에 1가지 일을 할수록 좋다.
+void Damage(const char* const _AttName, const char* const _DefName, int& _DefHp, int _Att)
+{
+    // 랜더링
+    printf_s("%s 가 %s를 공격해서 %d의 데미지를 입혔습니다.\n", _AttName, _DefName, _Att);
+
+}
+
+void HpStatus(int _Att, int& _DefHp)
+{
+    // 게임 로직
+    // 피격자 Hp - 공격자 Att
+    _DefHp -= _Att;
+}
+
+void PrintStatus()
+{
+    system("cls");
+
+    PlayerStatusRender();
+    MonsterStatusRender();
+}
+
+void PrintPlayerAtt()
+{
+    HpStatus(PlayerAtt, MonsterHp);    
+    system("cls");
+    PrintStatus();
+    Damage(PlayerName, MonsterName, MonsterHp, PlayerAtt);
+}
+
+void PrintMonsterAtt()
+{
+    HpStatus(MonsterAtt, PlayerHp);
+    system("cls");
+    PrintStatus();
+    Damage(MonsterName, PlayerName, PlayerHp, MonsterAtt);
+}
+
+
+
+
 int main()
 {
     // char Test0[100] = "Player";
     /*char Test1[50] = Test0;
     Test1 = Test0*/;
 
-    CreatePlayer("TestPlayer12345", 10, 100);
-    CreateMonster("Orc123456789", 10, 50);
+    CreatePlayer("TestPlayer", 10, 100);
+    CreateMonster("Orc", 10, 50);
     
 
-    PlayerStatusRender();
-    MonsterStatusRender();
+    //PlayerStatusRender();
+    //MonsterStatusRender();
 
-    CreateMonster("Goblin", 15, 70);
-    MonsterStatusRender();
+    //CreateMonster("Goblin", 15, 70);
+    //MonsterStatusRender();
 
-    CreateMonster("Black Fairy", 20, 60); // 11자리 마지막 'y' 문자 생략
-    MonsterStatusRender();
+    //CreateMonster("Black Fairy", 20, 60); // 11자리 마지막 'y' 문자 생략
+    //MonsterStatusRender();
 
+    while (true)
+    {
+        PrintStatus();
+        Input = _getch();
+        PrintPlayerAtt();
+        Input = _getch();
+        PrintMonsterAtt();
+        Input = _getch();
 
-    // printf_s("싸운다");
-    // 나는 이걸 플레이어라고 생각할 겁니다.
+        //PrintStatus();
+        //Damage(MonsterName, PlayerName, PlayerHp, MonsterAtt);
+        //HpStatus(MonsterAtt, PlayerHp);
+        //Input = _getch();
+
+    }
 
     return 0;
 }
