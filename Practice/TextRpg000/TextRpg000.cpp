@@ -134,15 +134,13 @@ void PrintMonsterAtt()
 }
 
 
-
-
 int main()
 {
     // char Test0[100] = "Player";
     /*char Test1[50] = Test0;
     Test1 = Test0*/;
 
-    CreatePlayer("TestPlayer", 10, 100);
+    CreatePlayer("Player", 10, 100);
     CreateMonster("Orc", 10, 50);
     
 
@@ -159,10 +157,13 @@ int main()
     {
         PrintStatus();
         Input = _getch();
+
         PrintPlayerAtt();
         Input = _getch();
+ 
         PrintMonsterAtt();
         Input = _getch();
+ 
 
         //PrintStatus();
         //Damage(MonsterName, PlayerName, PlayerHp, MonsterAtt);

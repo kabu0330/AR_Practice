@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpg000", "TextRpg000\Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game", "Game", "{43FAA88E-EF9F-4DC3-9A6F-3F8597956584}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpg000_FirstAttack", "TextRpg000_FirstAttack\TextRpg000_FirstAttack.vcxproj", "{BBDBA6F5-9D9C-479F-975F-AD2738B39775}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -63,12 +65,21 @@ Global
 		{09D68B4B-7C03-4B57-945F-C3CE35C4D99F}.Release|x64.Build.0 = Release|x64
 		{09D68B4B-7C03-4B57-945F-C3CE35C4D99F}.Release|x86.ActiveCfg = Release|Win32
 		{09D68B4B-7C03-4B57-945F-C3CE35C4D99F}.Release|x86.Build.0 = Release|Win32
+		{BBDBA6F5-9D9C-479F-975F-AD2738B39775}.Debug|x64.ActiveCfg = Debug|x64
+		{BBDBA6F5-9D9C-479F-975F-AD2738B39775}.Debug|x64.Build.0 = Debug|x64
+		{BBDBA6F5-9D9C-479F-975F-AD2738B39775}.Debug|x86.ActiveCfg = Debug|Win32
+		{BBDBA6F5-9D9C-479F-975F-AD2738B39775}.Debug|x86.Build.0 = Debug|Win32
+		{BBDBA6F5-9D9C-479F-975F-AD2738B39775}.Release|x64.ActiveCfg = Release|x64
+		{BBDBA6F5-9D9C-479F-975F-AD2738B39775}.Release|x64.Build.0 = Release|x64
+		{BBDBA6F5-9D9C-479F-975F-AD2738B39775}.Release|x86.ActiveCfg = Release|Win32
+		{BBDBA6F5-9D9C-479F-975F-AD2738B39775}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{09D68B4B-7C03-4B57-945F-C3CE35C4D99F} = {43FAA88E-EF9F-4DC3-9A6F-3F8597956584}
+		{BBDBA6F5-9D9C-479F-975F-AD2738B39775} = {43FAA88E-EF9F-4DC3-9A6F-3F8597956584}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A945DBD4-E193-4E2A-A6E3-BAAC4D3D6A3F}
