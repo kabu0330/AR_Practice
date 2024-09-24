@@ -18,20 +18,17 @@ void PlusString(char* _Buffer, int _BufferSize, const char* const _Value0, const
 {
     int Value0Count = CharCount(_Value0);
     int Value1Count = CharCount(_Value1);
-    int PlusCount = Value0Count + 1;
 
     for (int i = 0; i < Value0Count; i++)
     {
-        _Buffer[i]               = _Value0[i];
-        //_Buffer[i + Value1Count] = _Value1[i];
+        _Buffer[i] = _Value0[i];
     }
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < Value1Count; i++)
     {
-
+        _Buffer[i + Value0Count] = _Value1[i];
     }
  
-    
-
+    return;
 }
 
 int main()
