@@ -27,15 +27,24 @@ int NumberCount(int _Value)
 // 숫자를 문자열로 만드는 함수.
 void NumberToString(char* Buffer, int BufferSize, int _Value)
 {
-    int NumCount = NumberCount(_Value);
-    int ValueArr[] = { 0 };
+	int Count = NumberCount(_Value);
 
-    for (int i = 0; i <= BufferSize - 1; i++)
-    {
-        Buffer[i] = _Value;
-    }
+	int MulValue = 1;
+	for (int i = 0; i < Count - 1; i++)
+	{
+		MulValue *= 10;
 
-    return;
+	}
+
+	for (int i = 0; i < Count; i++)
+	{
+		int CurValue = _Value / MulValue;
+		Buffer[i] = '0' + CurValue;
+		_Value -= CurValue * MulValue;
+		MulValue /= 10;
+	}
+
+	return;
 }
 
 int main()
@@ -55,7 +64,13 @@ int main()
     char Buffer[100] = { 0 };
 
     NumberToString(Buffer, 100, 3712);
-    // Buffer == "3712"
+    char Buffer1[100] = { 0 };
+    NumberToString(Buffer1, 100, 12345);
+    char Buffer2[100] = { 0 };
+    NumberToString(Buffer2, 100, 506070);
+    char Buffer3[100] = { 0 };
+    NumberToString(Buffer3, 100, 123);
+
 
     Buffer;
 
