@@ -25,9 +25,7 @@ public:
     int GetDamage() const
     {
          //minAtt ~ MaxAtt 사이의 숫자가 리턴되는 함수를 만드세요.
-        int a = rand();
-        int b = rand() % 10;
-        int Attack = (rand() % (MaxAtt - MinAtt)) + MinAtt;
+        int Attack = (rand() % (MaxAtt - MinAtt + 1)) + MinAtt;
         return Attack;
     }
 
