@@ -173,6 +173,7 @@ int main()
             MonsterStatusRender();
             SpeedCheckRender(PlayerName);
             DamageRender(PlayerName, MonsterName, PlayerAtt);
+
             DamageRender(MonsterName, PlayerName, MonsterAtt);
             Input = _getch();
         }
@@ -192,6 +193,7 @@ int main()
             MonsterStatusRender();
             SpeedCheckRender(MonsterName);
             DamageRender(MonsterName, PlayerName, MonsterAtt);
+
             DamageRender(PlayerName, MonsterName, PlayerAtt);
             Input = _getch();
         }
