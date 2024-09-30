@@ -3,8 +3,6 @@
 
 const int NAMELEN = 10;
 
-
-
 class StatusUnit
 {
 protected:
