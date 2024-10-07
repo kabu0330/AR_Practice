@@ -48,7 +48,7 @@ class UPlayer : public UFightUnit
 public:
 	UPlayer();
 
-	void PrintAtt() override;
+	void StatusTextPrint() override;
 
 	// 나쁜게 아닌데 절제 없이 하다보면 순환참조 및 문제가 생긴다.
 	// 헤더에다가 구현하다보면 
@@ -72,7 +72,25 @@ public:
 		return CurZoneIndex;
 	}
 
-	void SaveFileLoad();
+	void SetEquipAtt(int _Att)
+	{
+		EquipAtt = _Att;
+	}
+
+	int GetEquipAtt()
+	{
+		return EquipAtt;
+	}
+
+	void SetEquipLevel(int _EquipLevel)
+	{
+		EquipLevel = _EquipLevel;
+	}
+
+	int GetEquipLevel()
+	{
+		return EquipLevel;
+	}
 
 protected:
 
@@ -81,5 +99,6 @@ private:
 	class Item* Weapon = nullptr;
 	int CurZoneIndex = 0;
 	int EquipAtt = 0;
+	int EquipLevel = 0;
 };
 

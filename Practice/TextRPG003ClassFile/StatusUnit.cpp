@@ -27,25 +27,24 @@ void UStatusUnit::BotLine()
         printf_s("-");
     }
     printf_s("\n");
-}
 
-void UStatusUnit::PrintAtt()
-{
-    printf_s("공격력 : %d ~ %d\n", MinAtt, MaxAtt);
-}
-
-void UStatusUnit::PrintHp()
-{
-    printf_s("체력 : %d\n", Hp);
 }
 
 void UStatusUnit::StatusRender()
 {
+    // 상속관계에서 자식이 존재하는데.
+    // 같은 함수를 사용함에도 자식들마다 다른 동작을 해야할때 사용하는 것이
+    // virtual 
+    
+    // 디버깅상 받는게 유리해서.
     TopLine();
 
-    PrintAtt();
-    PrintHp();
+    // UStatusUnit* const this;
+    // 부모쪽에서 virtual을 호출해도 자식쪽 virtual이 호출됩니다.
+    this->StatusTextPrint();
 
+    // 가상함수나 이런애들이 더 느립니다.
     BotLine();
 }
+
 
